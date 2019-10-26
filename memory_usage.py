@@ -15,6 +15,7 @@ def processData(process_list):
         for proc in psutil.process_iter():
             try:
                 pn = proc.name
+                print(type(pn))
             except psutil.NoSuchProcess:
                 pass
             else:
