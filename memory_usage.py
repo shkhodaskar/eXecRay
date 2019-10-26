@@ -1,40 +1,33 @@
 import os, psutil, time
 
+#Gets list of all processes running at time of execution. Returns a set
 def _getProcessBeforeExec():
-    current_processes = []
-    processlist = os.popen("tasklist").readlines()
-    for p in processlist:
+    current_processes = set()
+    for proc in psutil.process_iter():
         try:
-            current_processes.append(int(p[29:34]))
-        except:
+            current_processes.add(proc.name)
+        except psutil.noSuchProcess:
             pass
-    processData(current_processes)
+    return current_processes
 
-def display_process_data(pl):
-    for p in pl:
-        try:
-            print("New Process Detected with PID:{}".format(psutil.Process(p)))
-        except:
-            pass
+def processData(process_list):
+    while True:
+        for proc in psutil.process_iter():
+            try:
+                pn = proc.name
+            except psutil.NoSuchProcess:
+                pass
+            else:
+                if pn not in process_list:
+                    print("New Process:", pn, flush=True)
+                    process_list.add(pn)
+
+
+def display_process_data(p):
+    print("New Process Detected with PID:{}".format(psutil.Process(p)))
         #print(psutil.Process(p))
 
-def processData(previous_processes):
-    new_processes = []
-    while True:
-        get_total_processes = os.popen("tasklist").readlines()
-        for p in get_total_processes:
-            try:
-                c = int(p[29:34])
-            except:
-                pass
-            else:  
-                if c not in previous_processes:
-                    new_processes.append(c)
-
-        display_process_data(new_processes)
-        time.sleep(2)
-        new_processes += previous_processes
-        
 if __name__ == '__main__':
     cp = _getProcessBeforeExec()
     processData(cp)
+    #print(len(cp), len(set(cp)))
