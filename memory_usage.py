@@ -1,7 +1,8 @@
 import os, psutil, time
+import utils
 
 #Gets list of all processes running at time of execution. Returns a set
-def _getProcessBeforeExec():
+def get_current_processes():
     current_processes = set()
     for proc in psutil.process_iter():
         try:
@@ -10,18 +11,27 @@ def _getProcessBeforeExec():
             pass
     return current_processes
 
-def processData(process_list):
-    while True:
+def listener(process_list):
+    process_xray_list = []
+    timer = 0
+    while timer <= 15:
         for proc in psutil.process_iter():
             try:
                 pn = proc.name
-                print(type(pn))
             except psutil.NoSuchProcess:
                 pass
             else:
                 if pn not in process_list:
-                    print("New Process:", pn, flush=True)
+                    process_xray_object = utils.ProcessXray(proc.pid)
+                    process_xray_list.append(process_xray_object)
+
+                    #print("New Process:", pn, flush=True)
                     process_list.add(pn)
+        print(timer, flush=True)
+        time.sleep(1)
+        timer += 1
+
+    return process_xray_list
 
 
 def display_process_data(p):
@@ -29,6 +39,6 @@ def display_process_data(p):
         #print(psutil.Process(p))
 
 if __name__ == '__main__':
-    cp = _getProcessBeforeExec()
-    processData(cp)
+    cp = get_current_processes()
+    listener(cp)
     #print(len(cp), len(set(cp)))
