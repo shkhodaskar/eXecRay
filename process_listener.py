@@ -1,6 +1,6 @@
 import os, psutil, time
 import utils
-
+import datasets
 #Gets list of all processes running at time of execution. Returns a set
 def get_current_processes():
     current_processes = set()
@@ -14,20 +14,20 @@ def get_current_processes():
 def listener(process_list):
     process_xray_list = []
     timer = 0
-    while timer <= 15:
+    while timer <= 60:
         for proc in psutil.process_iter():
             try:
                 pn = proc.name
             except psutil.NoSuchProcess:
                 pass
             else:
-                if pn not in process_list:
+                if pn not in process_list and proc.name().lower() not in datasets.ignored_windows_services:
                     process_xray_object = utils.ProcessXray(proc.pid)
                     process_xray_list.append(process_xray_object)
 
-                    #print("New Process:", pn, flush=True)
+                    print("New Process:", proc.name(), flush=True)
                     process_list.add(pn)
-        print(timer, flush=True)
+        #print(timer, flush=True)
         time.sleep(1)
         timer += 1
 
