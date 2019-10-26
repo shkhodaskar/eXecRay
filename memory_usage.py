@@ -8,25 +8,33 @@ def _getProcessBeforeExec():
             current_processes.append(int(p[29:34]))
         except:
             pass
-    return current_processes
+    processData(current_processes)
 
 def display_process_data(pl):
     for p in pl:
-        print(f"New Process Detected with PID: {p}\n", psutil.Process(p))
+        try:
+            print("New Process Detected with PID:{}".format(psutil.Process(p)))
+        except:
+            pass
+        #print(psutil.Process(p))
 
-def processData(current_process):
-    old = []
+def processData(previous_processes):
+    new_processes = []
     while True:
-        new_processes = []
-        process_after_exec = os.popen("tasklist").readlines()
-        for np in process_after_exec:
-            if np not in current_process:
-                new_processes.append(np)
-        if len(new_processes) != 0 and sorted(old) != sorted(current_process):
-            old = new_processes
-            display_process_data()
-        #time.sleep(2)
+        get_total_processes = os.popen("tasklist").readlines()
+        for p in get_total_processes:
+            try:
+                c = int(p[29:34])
+            except:
+                pass
+            else:  
+                if c not in previous_processes:
+                    new_processes.append(c)
 
+        display_process_data(new_processes)
+        time.sleep(2)
+        new_processes += previous_processes
+        
 if __name__ == '__main__':
     cp = _getProcessBeforeExec()
     processData(cp)
