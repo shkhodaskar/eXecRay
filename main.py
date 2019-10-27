@@ -1,19 +1,9 @@
 import os
-# import magic
 import urllib.request
 from flask import Flask, flash, request, redirect, render_template, jsonify
 from werkzeug.utils import secure_filename
-#import pymongo
 import random
 import string
-
-
-#client = pymongo.MongoClient("mongodb+srv://gbanuru:<sdhacks>@sdhacks-ypee8.mongodb.net/logs?retryWrites=true&w=majority")
-#db = client.logs
-#print(client)
-#print(client.list_database_names())
-
-
 
 ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
 
@@ -74,8 +64,10 @@ def upload2db(logdata):
 
 def run_aws(filename):
     data = f"AWS {filename}"
-    #exec("docker build C:\Users\Admininstrator\Desktop\")
-    with open("C:\\Users\\Administrator\\Desktop\\output.txt", "r") as file:
+    
+    # place dynamic analysis here
+    
+    with open("output.txt", "r") as file:
         data = file.read() #.replace('\n','<br>')
     return data
 
