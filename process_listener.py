@@ -1,7 +1,8 @@
+#Gets list of all processes running at time of execution. Returns a set
 import os, psutil, time
 import utils
 import datasets
-#Gets list of all processes running at time of execution. Returns a set
+
 def get_current_processes():
     current_processes = set()
     for proc in psutil.process_iter():
@@ -40,4 +41,3 @@ def display_process_data(p):
 if __name__ == '__main__':
     cp = get_current_processes()
     listener(cp)
-    #print(len(cp), len(set(cp)))

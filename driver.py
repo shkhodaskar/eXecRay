@@ -1,6 +1,5 @@
 import process_listener as pl
 import utils
-#import logfile
 
 
 if __name__ == '__main__':
