@@ -14,7 +14,7 @@ def get_current_processes():
 def listener(process_list):
     process_xray_list = []
     timer = 0
-    while timer <= 60:
+    while timer <= 15:
         for proc in psutil.process_iter():
             try:
                 pn = proc.name
@@ -27,7 +27,6 @@ def listener(process_list):
 
                     print("New Process:", proc.name(), flush=True)
                     process_list.add(pn)
-        #print(timer, flush=True)
         time.sleep(1)
         timer += 1
 

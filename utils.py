@@ -32,6 +32,9 @@ class ProcessXray():
 
         return self.hardware_resources
 
+    def log_process_details(self, filename):
+        pass
+
 
 
 
