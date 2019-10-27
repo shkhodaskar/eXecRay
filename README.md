@@ -1,4 +1,5 @@
 # Executable Debugger
+![Home Screen](/images/HOME_SCREEN.png)
 
 This program enables a user to input a file into our webapp. We execute the file in an AWS virtual machine instance and generate a log file of the running processes in the executable. The log file is generated on the screen to help experienced developers make an informed decision.
 
@@ -20,5 +21,9 @@ Information security is vital for corporations and government partners. Using op
 1. Input AWS credentials
 1. Run main.py
 
-## Step by Step Images
+## What Metrics Do You Receive?
+*
+*
+*
+*
 
