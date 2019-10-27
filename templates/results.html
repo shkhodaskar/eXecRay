@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Your Results</title>
+
+  </head>
+  <body>
+    {% extends "template.html" %}
+    {% block content %}
+
+    <center><h1>What We Found</h1></center>
+
+    <center><div><p class="results">{{data}}</p></div></center>
+
+
+    <center>
+    <form action="{{ url_for('home') }}">
+    <input type="submit" value="Try Again " name="gohome"><br><br>
+    </form>
+    </center>
+
+    <p>Results Page</p>
+
+    {% endblock %}
+  </body>
+</html>
