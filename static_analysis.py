@@ -30,9 +30,6 @@ def execute_and_crosscheck_strings(filepath):
 
     return ret
 
-def store_in_DB():
-    '''s'''
-
 #function that executes strings -subprocess and execute strings
 
 #function that takes a strings output and the list of banned words and checks to see which words are in there
