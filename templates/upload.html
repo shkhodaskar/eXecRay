@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Flask Parent Template</title>
+    <link rel="stylesheet" href="{{ url_for('static',    filename='css/template.css') }}">
+
+</head>
+
+      <header>
+      <div class="container">
+          <center><h1 class="logo">Executable Debugger</h1></center>
+        <strong><nav>
+          <ul class="menu">
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('about') }}">About</a></li>
+          </ul>
+        </nav></strong>
+      </div>
+    </header>
+
+  <body>
+
+      <center><h1>Select a file to upload</h1></center>
+
+<center><form method="post" action="/action" enctype="multipart/form-data">
+    <dl>
+		<p>
+			<input type="file" name="file" autocomplete="off" required>
+		</p>
+    </dl>
+    <p>
+		<input type="submit" value="Submit">
+	</p>
+</form></center>
+
+      <center><p>
+	{% with messages = get_flashed_messages() %}
+	  {% if messages %}
+		<ul class=flashes>
+		{% for message in messages %}
+		  <li>{{ message }}</li>
+		{% endfor %}
+		</ul>
+	  {% endif %}
+	{% endwith %}
+</p></center>
+
+  </body>
