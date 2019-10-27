@@ -9,7 +9,7 @@ Information security is vital for corporations and government partners. Using op
 
 ## What Services Do We Use?
 
-* Amazon E2C for creating Virtual Machines
+* Amazon EC2 for creating Virtual Machines
 * MongoDB Atlas for anonymous storage of files
 * Flask for Website Deployment
 * psutils Python library for dynamic analysis of running executable processes
@@ -22,7 +22,7 @@ Information security is vital for corporations and government partners. Using op
 1. Run main.py
 
 ## What Metrics Do You Receive?
-*
+* 
 *
 *
 *
