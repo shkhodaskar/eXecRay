@@ -1,0 +1,92 @@
+1.
+Calculator.exe --> PID: 21456
+CPU_TIMES: pcputimes(user=0.890625, system=0.421875, children_user=0.0, children_system=0.0)
+CPU_PERCENT: 0.0        
+CREATE_TIME: 1572182201.0
+PARENT_PROCESS_ID: 92
+STATUS: running
+
+
+2.
+Spotify.exe --> PID: 14396
+CPU_TIMES: pcputimes(user=0.390625, system=0.1875, children_user=0.0, children_system=0.0)
+CPU_PERCENT: 0.0        
+CREATE_TIME: 1572182203.0
+PARENT_PROCESS_ID: 19228
+STATUS: running
+
+
+3.
+Spotify.exe --> PID: 19228
+CPU_TIMES: pcputimes(user=5.703125, system=3.21875, children_user=0.0, children_system=0.0)
+CPU_PERCENT: 0.0        
+CREATE_TIME: 1572182202.0
+PARENT_PROCESS_ID: 18844
+STATUS: running
+
+
+4.
+Spotify.exe --> PID: 10912
+CPU_TIMES: pcputimes(user=1.109375, system=0.40625, children_user=0.0, children_system=0.0)
+CPU_PERCENT: 0.0        
+CREATE_TIME: 1572182204.0
+PARENT_PROCESS_ID: 19228
+STATUS: running
+
+
+5.
+Spotify.exe --> PID: 15656
+CPU_TIMES: pcputimes(user=1.296875, system=1.0, children_user=0.0, children_system=0.0)
+CPU_PERCENT: 0.0        
+CREATE_TIME: 1572182204.0
+PARENT_PROCESS_ID: 19228
+STATUS: running
+
+
+6.
+Spotify.exe --> PID: 18160
+CPU_TIMES: pcputimes(user=7.4375, system=0.515625, children_user=0.0, children_system=0.0)
+CPU_PERCENT: 0.0        
+CREATE_TIME: 1572182204.0
+PARENT_PROCESS_ID: 19228
+STATUS: running
+
+
+7.
+HxCalendarAppImm.exe --> PID: 19404
+CPU_TIMES: pcputimes(user=1.90625, system=0.796875, children_user=0.0, children_system=0.0)
+CPU_PERCENT: 0.0        
+CREATE_TIME: 1572182207.0
+PARENT_PROCESS_ID: 92
+STATUS: running
+
+
+8.
+HxTsr.exe --> PID: 14084
+CPU_TIMES: pcputimes(user=0.9375, system=0.71875, children_user=0.0, children_system=0.0)
+CPU_PERCENT: 0.0        
+CREATE_TIME: 1572182208.0
+PARENT_PROCESS_ID: 92
+STATUS: running
+
+Static Analysis Report:
+After analyzing the executable, these are potentially dangerous keywords found within the file:
+https://asdjasdlkas.com,
+__security_cookie_complement,
+malware.c,
+dasd.com,
+ix86_incoming_stack_boundary,
+Sysinternals - www.sysinternals.com,
+auth:asdasd,
+GET[abc],
+direct action virus,
+.data$__security_cookie_complement,
+X86_TUNE_SOFTWARE_PREFETCHING_BENEFICIAL,
+api:asdjlasjdkl,
+__size_of_heap_commit__,
+hacked system32,
+prefetch_block,
+inject,
+http://asdhjkas.com,
+uninstall windows,
+__size_of_stack_commit__

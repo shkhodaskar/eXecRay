@@ -1,5 +1,5 @@
 class ProcessXray():
-
+    
     def __init__(self, process_id):
         import psutil
         from sys import platform
@@ -8,8 +8,6 @@ class ProcessXray():
         self.name = self.proc.name
         self.os = platform
         self.osdict = {'linux2': None, 'win32': None, 'darwin': None}
-
-
         if self.os not in self.osdict:
             raise OSNotSupportedException(f"Your OS is not supported: {self.os}")
 
@@ -31,14 +29,6 @@ class ProcessXray():
             self.hardware_resources["status"] = self.proc.status()
 
         return self.hardware_resources
-
-    def log_process_details(self, filename):
-        pass
-
-
-
-
-
 
 class OSNotSupportedException(Exception):
     pass
