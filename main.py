@@ -3,7 +3,7 @@ import os
 import urllib.request
 from flask import Flask, flash, request, redirect, render_template, jsonify
 from werkzeug.utils import secure_filename
-import pymongo
+#import pymongo
 import random
 import string
 
@@ -74,8 +74,9 @@ def upload2db(logdata):
 
 def run_aws(filename):
     data = f"AWS {filename}"
-
-
+    #exec("docker build C:\Users\Admininstrator\Desktop\")
+    with open("C:\\Users\\Administrator\\Desktop\\output.txt", "r") as file:
+        data = file.read() #.replace('\n','<br>')
     return data
 
 def extract_info(filename):
