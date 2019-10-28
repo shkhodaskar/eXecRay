@@ -16,13 +16,10 @@ Information security is vital for corporations and government partners. Using op
 ## How To Run Our Code?
 
 1. Git clone this repository.
-1. Input MongoDB Atlas account credentials
 1. Input AWS credentials
 1. Run main.py
 
 ## What Metrics Do You Receive?
-* 
-*
-*
-*
+* Static Analysis to search for potentially harmful strings, such https requests
+* Information about process(es) created after running the exec
 
